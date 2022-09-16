@@ -10,7 +10,7 @@ public class HardDiskDTO extends ProductDTO {
     @NotEmpty
     private final Double capacity;
 
-    public HardDiskDTO(int id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
+    public HardDiskDTO(Long id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
                        @NotEmpty Integer productAvailable, @NotEmpty ProductType type, @NotEmpty Double capacity) {
         super(id, serialNumber, price, vendor, productAvailable, type);
         this.capacity = capacity;

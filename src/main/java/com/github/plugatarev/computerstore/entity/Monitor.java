@@ -3,8 +3,8 @@ package com.github.plugatarev.computerstore.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity(name="HDD")
-public class HDD extends Product {
+@Entity(name="Monitor")
+public class Monitor extends Product {
     @Column
-    private Integer capacity;
+    private Double diagonal;
 }

@@ -11,7 +11,7 @@ public class LaptopDTO extends ProductDTO {
     @NotEmpty
     private final Diagonal diagonal;
 
-    public LaptopDTO(int id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
+    public LaptopDTO(Long id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
                      @NotEmpty Integer productAvailable, @NotEmpty ProductType type, @NotEmpty Diagonal diagonal) {
         super(id, serialNumber, price, vendor, productAvailable, type);
         this.diagonal = diagonal;

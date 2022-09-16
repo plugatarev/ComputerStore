@@ -1,13 +1,15 @@
 package com.github.plugatarev.computerstore.data;
 
 import com.github.plugatarev.computerstore.enums.ProductType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-@DiscriminatorColumn
-public class Product {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

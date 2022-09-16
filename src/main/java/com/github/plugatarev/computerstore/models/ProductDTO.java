@@ -8,8 +8,8 @@ import javax.validation.constraints.NotEmpty;
 
 @AllArgsConstructor
 @Getter
-public class ProductDTO {
-    private final int id;
+public abstract class ProductDTO {
+    private final Long id;
 
     @NotEmpty
     private final String serialNumber;
