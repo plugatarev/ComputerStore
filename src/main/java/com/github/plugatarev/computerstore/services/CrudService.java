@@ -12,5 +12,4 @@ public interface CrudService<T extends Product> {
     void update(T entity);
     Optional<T> getById(long id);
     List<T> findAllByType(ProductType productType);
-
 }

@@ -1,6 +1,6 @@
 package com.github.plugatarev.computerstore.services;
 
-import com.github.plugatarev.computerstore.data.DesktopComputer;
+import com.github.plugatarev.computerstore.entity.DesktopComputer;
 import com.github.plugatarev.computerstore.enums.ProductType;
 import com.github.plugatarev.computerstore.repository.DesktopComputerRepository;
 import org.springframework.stereotype.Service;
@@ -17,6 +17,6 @@ public class DesktopComputerService extends ProductService<DesktopComputer> {
     @Override
     public List<DesktopComputer> findAllByType(ProductType productType) {
         DesktopComputerRepository repository = (DesktopComputerRepository) getRepository();
-        return repository.findAllByProductType(productType);
+        return repository.findAllProductByType(productType);
     }
 }

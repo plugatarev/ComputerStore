@@ -1,6 +1,6 @@
 package com.github.plugatarev.computerstore.services;
 
-import com.github.plugatarev.computerstore.data.Product;
+import com.github.plugatarev.computerstore.entity.Product;
 import com.github.plugatarev.computerstore.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Getter
 @Service
-public abstract class ProductService<T extends Product> implements InCrudService<T> {
+public abstract class ProductService<T extends Product> implements CrudService<T> {
 
     private final ProductRepository<T> repository;
 
