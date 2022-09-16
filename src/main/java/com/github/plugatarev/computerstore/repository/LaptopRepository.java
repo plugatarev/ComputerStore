@@ -1,7 +1,6 @@
 package com.github.plugatarev.computerstore.repository;
 
-import com.github.plugatarev.computerstore.data.Laptop;
-import org.springframework.data.repository.CrudRepository;
+import com.github.plugatarev.computerstore.entity.Laptop;
 import org.springframework.stereotype.Repository;
 
 @Repository
