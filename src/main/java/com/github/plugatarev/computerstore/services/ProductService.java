@@ -1,28 +1,37 @@
 package com.github.plugatarev.computerstore.services;
 
 import com.github.plugatarev.computerstore.data.Product;
-import org.springframework.data.repository.CrudRepository;
+import com.github.plugatarev.computerstore.repository.ProductRepository;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-public abstract class CrudService<E extends Product> implements InCrudService<E> {
+@AllArgsConstructor
+@Getter
+@Service
+public abstract class ProductService<T extends Product> implements InCrudService<T> {
 
-    private final AbstractRepository<E, Integer> repository;
+    private final ProductRepository<T> repository;
 
     @Override
-    public void add(E entity) {
+    public void add (T entity) {
         repository.save(entity);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete (long id) {
         repository.deleteById(id);
     }
 
     @Override
-    public void update(E entity) {
+    public void update (T entity) {
         repository.save(entity);
     }
 
     @Override
-    public Optional<E> getById(int id) { return repository.findById(id); }
+    public Optional<T> getById (long id) {
+        return repository.findById(id);
+    }
+}
