@@ -2,6 +2,8 @@ package com.github.plugatarev.computerstore.repository;
 
 import com.github.plugatarev.computerstore.data.Monitor;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface MonitorRepository extends CrudRepository<Monitor, Long> {
+@Repository
+public interface MonitorRepository extends ProductRepository<Monitor> {
 }
