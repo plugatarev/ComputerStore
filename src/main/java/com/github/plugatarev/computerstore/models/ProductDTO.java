@@ -8,21 +8,21 @@ import javax.validation.constraints.NotEmpty;
 
 @AllArgsConstructor
 @Getter
-public class Product {
-    private int id;
+public class ProductDTO {
+    private final int id;
 
     @NotEmpty
-    private String serialNumber;
+    private final String serialNumber;
 
     @NotEmpty
-    private Double price;
+    private final Double price;
 
     @NotEmpty
-    private String vendor;
+    private final String vendor;
 
     @NotEmpty
-    private Integer productAvailable;
+    private final Integer productAvailable;
 
     @NotEmpty
-    private ProductType type;
+    private final ProductType type;
 }

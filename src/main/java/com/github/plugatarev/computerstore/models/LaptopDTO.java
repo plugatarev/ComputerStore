@@ -7,12 +7,12 @@ import lombok.Getter;
 import javax.validation.constraints.NotEmpty;
 
 @Getter
-public class Laptop extends Product {
+public class LaptopDTO extends ProductDTO {
     @NotEmpty
-    private Diagonal diagonal;
+    private final Diagonal diagonal;
 
-    public Laptop(int id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
-                  @NotEmpty Integer productAvailable, @NotEmpty ProductType type, @NotEmpty Diagonal diagonal) {
+    public LaptopDTO(int id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
+                     @NotEmpty Integer productAvailable, @NotEmpty ProductType type, @NotEmpty Diagonal diagonal) {
         super(id, serialNumber, price, vendor, productAvailable, type);
         this.diagonal = diagonal;
     }
