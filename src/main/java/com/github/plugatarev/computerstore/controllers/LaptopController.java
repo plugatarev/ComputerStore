@@ -1,49 +1,42 @@
 package com.github.plugatarev.computerstore.controllers;
 
-import com.github.plugatarev.computerstore.entity.HardDisk;
-import com.github.plugatarev.computerstore.entity.Monitor;
+import com.github.plugatarev.computerstore.entity.Laptop;
 import com.github.plugatarev.computerstore.enums.ProductType;
-import com.github.plugatarev.computerstore.mappers.HardDiskMapper;
-import com.github.plugatarev.computerstore.mappers.MonitorMapper;
-import com.github.plugatarev.computerstore.models.HardDiskDTO;
+import com.github.plugatarev.computerstore.mappers.LaptopMapper;
+import com.github.plugatarev.computerstore.models.LaptopDTO;
 import com.github.plugatarev.computerstore.models.MonitorDTO;
-import com.github.plugatarev.computerstore.repository.DesktopComputerRepository;
-import com.github.plugatarev.computerstore.repository.HardDiskRepository;
-import com.github.plugatarev.computerstore.services.HardDiskService;
-import com.github.plugatarev.computerstore.services.MonitorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.github.plugatarev.computerstore.services.LaptopService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/products/HardDisks")
-public class HardDiskController extends ProductController<HardDisk, HardDiskDTO>{
-    public HardDiskController(HardDiskService service, HardDiskMapper mapper) {
+@RequestMapping("/products/laptops")
+public class LaptopController extends ProductController<Laptop, LaptopDTO>{
+    public LaptopController(LaptopService service, LaptopMapper mapper) {
         super(service, mapper);
     }
 
     @GetMapping
-    private ResponseEntity<List<HardDiskDTO>> HardDisks(){
-        List<HardDiskDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
+    private ResponseEntity<List<LaptopDTO>> laptops(){
+        List<LaptopDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
                                               .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody HardDiskDTO dto) {
+    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody LaptopDTO dto) {
 
-        HardDisk monitor = getService().getById(id).orElseThrow(() ->
+        Laptop laptop = getService().getById(id).orElseThrow(() ->
                 new IllegalStateException("HardDisk with id " + id + " is not found"));
 
-        monitor.setPrice(dto.getPrice());
-        monitor.setProductAvailable(dto.getProductAvailable());
-        monitor.setDiagonal(dto.getDiagonal());
-        getService().update(monitor);
+        laptop.setPrice(dto.getPrice());
+        laptop.setProductAvailable(dto.getProductAvailable());
+        laptop.setDiagonal(dto.getDiagonal());
+        getService().update(laptop);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
