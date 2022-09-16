@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @Getter
 public abstract class ProductDTO {
+    @NotEmpty
     private final Long id;
 
     @NotEmpty
@@ -21,7 +22,7 @@ public abstract class ProductDTO {
     private final String vendor;
 
     @NotEmpty
-    private final Integer productAvailable;
+    private final Long productAvailable;
 
     @NotEmpty
     private final ProductType type;

@@ -10,8 +10,8 @@ public class MonitorDTO extends ProductDTO {
     @NotEmpty
     private final Double diagonal;
 
-    public MonitorDTO(Long id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
-                      Integer productAvailable, @NotEmpty ProductType type, @NotEmpty Double diagonal) {
+    public MonitorDTO(@NotEmpty Long id, @NotEmpty String serialNumber, @NotEmpty Double price, @NotEmpty String vendor,
+                      @NotEmpty Long productAvailable, @NotEmpty ProductType type, @NotEmpty Double diagonal) {
         super(id, serialNumber, price, vendor, productAvailable, type);
         this.diagonal = diagonal;
     }
