@@ -3,7 +3,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public enum ProductType {
-    HardDisk,
+    HARD_DISK,
     LAPTOP,
     MONITOR,
     DESKTOP_COMPUTER
