@@ -1,5 +1,4 @@
 # **Spring Boot - Computer Store**
-[![Build Status](https://travis-ci.org/syqu22/spring-boot-shop-sample.svg?branch=master)](https://travis-ci.org/syqu22/spring-boot-shop-sample)
 
 ## Description
 Store that sells computers and accessories with the following type of goods:  
@@ -12,7 +11,7 @@ Store that sells computers and accessories with the following type of goods:
 
 You can clone this repository and use it locally:
 ```sh
-$ git clone 
+$ git clone git@github.com:plugatarev/ComputerStore.git
 ```
 
 **Using Maven plugin**
