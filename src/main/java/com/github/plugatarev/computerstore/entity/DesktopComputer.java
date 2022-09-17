@@ -2,7 +2,6 @@ package com.github.plugatarev.computerstore.entity;
 
 import com.github.plugatarev.computerstore.enums.DesktopForm;
 import com.github.plugatarev.computerstore.enums.ProductType;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

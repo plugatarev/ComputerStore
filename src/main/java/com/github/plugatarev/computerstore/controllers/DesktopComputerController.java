@@ -21,14 +21,14 @@ public class DesktopComputerController extends ProductController<DesktopComputer
     }
 
     @GetMapping
-    private ResponseEntity<List<DesktopComputerDTO>> laptops(){
-        List<DesktopComputerDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
+    public ResponseEntity<List<DesktopComputerDTO>> desktops(){
+        List<DesktopComputerDTO> dtoList = getService().findAllByType(ProductType.DESKTOP_COMPUTER).stream()
                                               .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody DesktopComputerDTO dto) {
+    public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody DesktopComputerDTO dto) {
 
         DesktopComputer computer = getService().getById(id).orElseThrow(() ->
                 new IllegalStateException("HardDisk with id " + id + " is not found"));

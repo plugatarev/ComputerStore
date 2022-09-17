@@ -8,5 +8,5 @@ import java.util.List;
 
 @NoRepositoryBean
 public interface ProductRepository<T> extends CrudRepository<T, Long> {
-    List<T> findAllProductByType(ProductType type);
+    List<T> findAllByProductType(ProductType type);
 }

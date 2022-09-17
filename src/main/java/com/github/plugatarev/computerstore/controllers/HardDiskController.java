@@ -21,14 +21,14 @@ public class HardDiskController extends ProductController<HardDisk, HardDiskDTO>
     }
 
     @GetMapping
-    private ResponseEntity<List<HardDiskDTO>> HardDisks(){
-        List<HardDiskDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
+    public ResponseEntity<List<HardDiskDTO>> hardDisks(){
+        List<HardDiskDTO> dtoList = getService().findAllByType(ProductType.HardDisk).stream()
                                               .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody HardDiskDTO dto) {
+    public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody HardDiskDTO dto) {
 
         HardDisk hardDisk = getService().getById(id).orElseThrow(() ->
                 new IllegalStateException("HardDisk with id " + id + " is not found"));

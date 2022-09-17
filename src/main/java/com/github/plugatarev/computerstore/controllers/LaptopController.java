@@ -21,14 +21,14 @@ public class LaptopController extends ProductController<Laptop, LaptopDTO>{
     }
 
     @GetMapping
-    private ResponseEntity<List<LaptopDTO>> laptops(){
-        List<LaptopDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
+    public ResponseEntity<List<LaptopDTO>> laptops(){
+        List<LaptopDTO> dtoList = getService().findAllByType(ProductType.LAPTOP).stream()
                                               .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody LaptopDTO dto) {
+    public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody LaptopDTO dto) {
 
         Laptop laptop = getService().getById(id).orElseThrow(() ->
                 new IllegalStateException("HardDisk with id " + id + " is not found"));

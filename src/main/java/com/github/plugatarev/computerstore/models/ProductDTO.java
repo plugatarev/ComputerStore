@@ -9,7 +9,6 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @Getter
 public abstract class ProductDTO {
-    @NotEmpty
     private final Long id;
 
     @NotEmpty

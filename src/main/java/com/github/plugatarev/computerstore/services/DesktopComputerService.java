@@ -17,6 +17,6 @@ public class DesktopComputerService extends ProductService<DesktopComputer> {
     @Override
     public List<DesktopComputer> findAllByType(ProductType productType) {
         DesktopComputerRepository repository = (DesktopComputerRepository) getRepository();
-        return repository.findAllProductByType(productType);
+        return repository.findAllByProductType(productType);
     }
 }

@@ -1,6 +1,5 @@
 package com.github.plugatarev.computerstore.entity;
 
-import com.github.plugatarev.computerstore.enums.DesktopForm;
 import com.github.plugatarev.computerstore.enums.ProductType;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 
-@Entity(name="HDD")
+@Entity(name="HardDisk")
 @Getter
 @Setter
 public class HardDisk extends Product {

@@ -17,6 +17,6 @@ public class MonitorService extends ProductService<Monitor> {
     @Override
     public List<Monitor> findAllByType(ProductType productType) {
         MonitorRepository repository = (MonitorRepository) getRepository();
-        return repository.findAllProductByType(productType);
+        return repository.findAllByProductType(productType);
     }
 }

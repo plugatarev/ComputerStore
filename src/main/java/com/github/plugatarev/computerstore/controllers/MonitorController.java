@@ -21,14 +21,14 @@ public class MonitorController extends ProductController<Monitor, MonitorDTO> {
     }
 
     @GetMapping
-    private ResponseEntity<List<MonitorDTO>> monitors(){
+    public ResponseEntity<List<MonitorDTO>> monitors(){
         List<MonitorDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
                                                .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody MonitorDTO dto) {
+    public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody MonitorDTO dto) {
 
         Monitor monitor = getService().getById(id).orElseThrow(() ->
                 new IllegalStateException("Monitor with id " + id + " is not found"));

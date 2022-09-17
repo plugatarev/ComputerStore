@@ -17,6 +17,6 @@ public class LaptopService extends ProductService<Laptop> {
     @Override
     public List<Laptop> findAllByType(ProductType productType) {
         LaptopRepository repository = (LaptopRepository) getRepository();
-        return repository.findAllProductByType(productType);
+        return repository.findAllByProductType(productType);
     }
 }

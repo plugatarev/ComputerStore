@@ -17,6 +17,6 @@ public class HardDiskService extends ProductService<HardDisk> {
     @Override
     public List<HardDisk> findAllByType(ProductType productType) {
         HardDiskRepository repository = (HardDiskRepository) getRepository();
-        return repository.findAllProductByType(productType);
+        return repository.findAllByProductType(productType);
     }
 }
