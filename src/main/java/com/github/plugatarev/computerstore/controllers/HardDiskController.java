@@ -22,8 +22,10 @@ public class HardDiskController extends ProductController<HardDisk, HardDiskDTO>
 
     @GetMapping
     public ResponseEntity<List<HardDiskDTO>> hardDisks(){
-        List<HardDiskDTO> dtoList = getService().findAllByType(ProductType.HARD_DISK).stream()
-                                                .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
+        List<HardDiskDTO> dtoList = getService().findAllByType(ProductType.HARD_DISK)
+                                                .stream()
+                                                .map(e -> getAbstractMapper().toDTO(e))
+                                                .collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 

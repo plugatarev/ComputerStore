@@ -22,8 +22,10 @@ public class LaptopController extends ProductController<Laptop, LaptopDTO>{
 
     @GetMapping
     public ResponseEntity<List<LaptopDTO>> laptops(){
-        List<LaptopDTO> dtoList = getService().findAllByType(ProductType.LAPTOP).stream()
-                                              .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
+        List<LaptopDTO> dtoList = getService().findAllByType(ProductType.LAPTOP)
+                                              .stream()
+                                              .map(e -> getAbstractMapper().toDTO(e))
+                                              .collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 

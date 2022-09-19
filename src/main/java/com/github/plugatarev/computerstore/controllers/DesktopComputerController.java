@@ -22,8 +22,10 @@ public class DesktopComputerController extends ProductController<DesktopComputer
 
     @GetMapping
     public ResponseEntity<List<DesktopComputerDTO>> desktops(){
-        List<DesktopComputerDTO> dtoList = getService().findAllByType(ProductType.DESKTOP_COMPUTER).stream()
-                                              .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
+        List<DesktopComputerDTO> dtoList = getService().findAllByType(ProductType.DESKTOP_COMPUTER)
+                                                       .stream()
+                                                       .map((e) -> getAbstractMapper().toDTO(e))
+                                                       .collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 

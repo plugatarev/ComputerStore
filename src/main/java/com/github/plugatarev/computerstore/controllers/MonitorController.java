@@ -22,8 +22,10 @@ public class MonitorController extends ProductController<Monitor, MonitorDTO> {
 
     @GetMapping
     public ResponseEntity<List<MonitorDTO>> monitors(){
-        List<MonitorDTO> dtoList = getService().findAllByType(ProductType.MONITOR).stream()
-                                               .map((e) -> getAbstractMapper().toDTO(e)).collect(Collectors.toList());
+        List<MonitorDTO> dtoList = getService().findAllByType(ProductType.MONITOR)
+                                               .stream()
+                                               .map(e -> getAbstractMapper().toDTO(e))
+                                               .collect(Collectors.toList());
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }
 
