@@ -28,7 +28,7 @@ $ mvn spring-boot:run
 
 
 ## REST API
-### Desktop Computer
+### Desktop Computers
  - **GET /products/desktopComputers** - _get all desktop computers_  
  - **POST /products/desktopComputers**<br/>
  {BodyExample} := { "serialNumber": "R2D1", "price": 1321.0, "vendor": "1hp", "productAvailable": 11, "type": "DESKTOP_COMPUTER", "formFactor": "DESKTOP" } -  
@@ -50,7 +50,7 @@ _create new desktop computer with {BodyExample} parameters_
   _update laptop with identifier {id} based by {BodyExample}_
 - **DELETE /products/laptops/{id}** - _delete laptop with identifier {id}_
 
-### Hard Disk
+### Hard Disks
 - **GET /products/hardDisks** - _get all hard disks_
 - **POST /products/hardDisks**<br/>
   {BodyExample} := { "serialNumber": "R2D1", "price": 1321.0, "vendor": "wer", "productAvailable": 11, "type": "HARD_DISK", "capacity": 512 } - 
