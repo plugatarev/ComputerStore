@@ -33,7 +33,7 @@ public class LaptopController extends ProductController<Laptop, LaptopDTO>{
     public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody LaptopDTO dto) {
 
         Laptop laptop = getService().getById(id).orElseThrow(() ->
-                new IllegalStateException("HardDisk with id " + id + " is not found"));
+                new IllegalStateException("Laptop with id " + id + " is not found"));
 
         laptop.setPrice(dto.getPrice());
         laptop.setProductAvailable(dto.getProductAvailable());

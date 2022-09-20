@@ -33,7 +33,7 @@ public class HardDiskController extends ProductController<HardDisk, HardDiskDTO>
     public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody HardDiskDTO dto) {
 
         HardDisk hardDisk = getService().getById(id).orElseThrow(() ->
-                new IllegalStateException("HardDisk with id " + id + " is not found"));
+                new IllegalStateException("Hard disk with id " + id + " is not found"));
 
         hardDisk.setPrice(dto.getPrice());
         hardDisk.setProductAvailable(dto.getProductAvailable());

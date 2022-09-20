@@ -33,7 +33,7 @@ public class DesktopComputerController extends ProductController<DesktopComputer
     public ResponseEntity<MonitorDTO> update(@PathVariable("id") int id, @RequestBody DesktopComputerDTO dto) {
 
         DesktopComputer computer = getService().getById(id).orElseThrow(() ->
-                new IllegalStateException("HardDisk with id " + id + " is not found"));
+                new IllegalStateException("Desktop computer with id " + id + " is not found"));
 
         computer.setPrice(dto.getPrice());
         computer.setProductAvailable(dto.getProductAvailable());

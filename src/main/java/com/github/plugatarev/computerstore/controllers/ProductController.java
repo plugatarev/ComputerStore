@@ -25,13 +25,13 @@ public abstract class ProductController <T extends Product, D extends ProductDTO
     @GetMapping("/{id}")
     public ResponseEntity<D> get(@PathVariable("id") int id) {
         T entity = service.getById(id).orElseThrow(() ->
-                new IllegalStateException("Entity with id: {" + id + "} not found."));
+                new IllegalStateException("Product with id: {" + id + "} not found."));
         return new ResponseEntity<>(abstractMapper.toDTO(entity), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable int id) {
         service.delete(id);
-        return new ResponseEntity<>("Entity with id: {" + id + "} was deleted.", HttpStatus.OK);
+        return new ResponseEntity<>("Product with id: {" + id + "} was deleted.", HttpStatus.OK);
     }
 }
